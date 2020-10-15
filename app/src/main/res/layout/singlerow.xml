@@ -36,9 +36,9 @@
             android:id="@+id/textDescription"
             android:textSize="10sp"
             android:textColor="@color/colorBlack"
-            android:layout_toRightOf="@+id/retrievedView"
-            android:layout_below="@+id/nameTag"
+            android:layout_below="@+id/retrievedView"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"/>
 
 
