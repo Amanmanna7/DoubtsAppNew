@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "629382042265",
+    "firebase_url": "https://doubtsapp-0077.firebaseio.com",
+    "project_id": "doubtsapp-0077",
+    "storage_bucket": "doubtsapp-0077.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629382042265:android:dfeea2b2cb912d42845e08",
+        "android_client_info": {
+          "package_name": "com.example.doubtsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629382042265-vbtsuvqb5g26omqaignsehjveml0m2jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrvILE8QZeV1P6dzVq4YMNy8utmV4xCJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629382042265-vbtsuvqb5g26omqaignsehjveml0m2jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

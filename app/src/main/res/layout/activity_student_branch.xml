@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Branch"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        app:fontFamily="@font/aladin"/>
+
+    <Button
+        android:id="@+id/cse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="CSE"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+
+    <Button
+        android:id="@+id/it"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="IT"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/csi"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="CSI"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/ece"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ECE"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+
+    <Button
+        android:id="@+id/en"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="EN"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/ce"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="CE"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+</LinearLayout>

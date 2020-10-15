@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Semester"
+        android:textColor="#000"
+        android:textSize="30dp"
+        app:fontFamily="@font/aladin" />
+
+    <Button
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="#7F673AB7"
+        android:text="i"
+        android:textSize="20dp"
+        app:fontFamily="@font/aladin" />
+
+    <Button
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ii"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin"/>
+    <Button
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="iii"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin"/>
+    <Button
+        android:id="@+id/fourth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="iv"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+
+    <Button
+        android:id="@+id/fifth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="v"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/sixth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="vi"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/seventh"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="vii"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+    <Button
+        android:id="@+id/eighth"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="viii"
+        android:background="#7F673AB7"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:fontFamily="@font/aladin" />
+</LinearLayout>
