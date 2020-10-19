@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".selectedQuestionActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selQuesUser"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:id="@+id/imgQuesView"/>
+
+    <TextView
+        android:id="@+id/selQuesDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnViewTextAnswer"
+            android:text="View Text Answer"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"/>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnViewImageAnswer"
+            android:layout_gravity="center"
+            android:text="View Image Answer"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"/>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/btnPostTextAns"
+            android:text="Post Text Answer"
+            android:layout_marginLeft="4dp"
+            android:id="@+id/btnPostTextAns"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnPostImgAns"
+            android:text="Post Image Answer"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"/>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

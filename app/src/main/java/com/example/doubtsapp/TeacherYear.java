@@ -22,8 +22,6 @@ public class TeacherYear extends AppCompatActivity {
         fifthTeach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(TeacherYear.this, TeacherSubject.class);
-                startActivity(intent);
             }
         });
     }

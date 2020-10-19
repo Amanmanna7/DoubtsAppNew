@@ -70,6 +70,32 @@
         android:hint="Enter New Password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/edtTeachBranch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5E35B1"
+        android:ems="10"
+        android:hint="Enter Branch" />
+
+
+    <EditText
+        android:id="@+id/edtTeachSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5E35B1"
+        android:ems="10"
+        android:hint="Enter Subject" />
+
+
+    <EditText
+        android:id="@+id/edtTeachUniversity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5E35B1"
+        android:ems="10"
+        android:hint="Enter University" />
+
 
     <Button
         android:id="@+id/btnTeachSignup2"

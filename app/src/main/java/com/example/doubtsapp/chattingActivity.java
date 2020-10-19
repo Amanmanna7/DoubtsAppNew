@@ -31,6 +31,7 @@ public class chattingActivity extends AppCompatActivity {
     ArrayList<String> listOfDiscussion= new ArrayList<>();
     private ArrayAdapter arrayAdapter;
     private String UserName;
+    private int check;
 
     private DatabaseReference dbr=FirebaseDatabase.getInstance().getReference().getRoot().child("DiscussionTopics");
 
@@ -44,7 +45,16 @@ public class chattingActivity extends AppCompatActivity {
             arrayAdapter= new ArrayAdapter(this,android.R.layout.simple_list_item_1,listOfDiscussion);
             DiscussionTopics.setAdapter(arrayAdapter);
 
-            getUsername();
+            check= getIntent().getIntExtra("check",0);
+
+            if(check==0){
+                getUsername();
+            }
+            else {
+                getTeachUsername();
+            }
+
+
 
             dbr.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -77,6 +87,7 @@ public class chattingActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(),discussionActivity.class);
                     i.putExtra("selected_topic",((TextView)view).getText().toString());
                     i.putExtra("user_name",UserName);
+                    i.putExtra("check",check);
                     startActivity(i);
                 }
             });
@@ -84,6 +95,29 @@ public class chattingActivity extends AppCompatActivity {
         catch (Exception e){
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void getTeachUsername() {
+
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference Ref = FirebaseDatabase.getInstance().getReference().child("Teachers");
+        String uid = user.getUid();
+        DatabaseReference myRef= Ref.child(uid);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String tempName = snapshot.child("Name").getValue().toString();
+                String strArr[]=tempName.split(" ");
+                UserName=strArr[0];
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     private void getUsername(){

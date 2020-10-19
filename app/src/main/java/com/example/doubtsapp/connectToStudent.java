@@ -12,13 +12,13 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link connectToFaculty#newInstance} factory method to
+ * Use the {@link connectToStudent#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class connectToFaculty extends androidx.fragment.app.Fragment {
+public class connectToStudent extends Fragment {
 
-    private Button btnJoin;
-    private Button btnChat;
+    private Button btnJoinTeach;
+    private Button btnChatTeach;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +29,7 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
     private String mParam1;
     private String mParam2;
 
-    public connectToFaculty() {
+    public connectToStudent() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment connectToFaculty.
+     * @return A new instance of fragment connectToStudent.
      */
     // TODO: Rename and change types and number of parameters
-    public static connectToFaculty newInstance(String param1, String param2) {
-        connectToFaculty fragment = new connectToFaculty();
+    public static connectToStudent newInstance(String param1, String param2) {
+        connectToStudent fragment = new connectToStudent();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,11 +63,11 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_connect_to_faculty, container, false);
-        btnJoin = (Button) view.findViewById(R.id.btnConnect);
-        btnChat= (Button) view.findViewById(R.id.btnChat);
-        btnJoin.setOnClickListener(new View.OnClickListener() {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_connect_to_student, container, false);
+        btnJoinTeach = (Button) view.findViewById(R.id.btnConnectTeach);
+        btnChatTeach= (Button) view.findViewById(R.id.btnChatTeach);
+        btnJoinTeach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToAttract(v);
@@ -75,7 +75,7 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
             }
         });
 
-        btnChat.setOnClickListener(new View.OnClickListener() {
+        btnChatTeach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToChat(v);
@@ -84,29 +84,22 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
 
 
         });
-
-
-
-
-
-
-
         return view;
-    }
-
-
-
-    private void goToAttract(View v)
-    {
-        Intent intent = new Intent(getActivity(), VideoConference.class);
-        startActivity(intent);
     }
 
     private void goToChat(View v) {
 
-        Intent intent= new Intent(getActivity(),chattingActivity.class);
-        startActivity(intent);
 
+        Intent intent= new Intent(getActivity(),chattingActivity.class);
+        intent.putExtra("check",1);
+        startActivity(intent);
     }
 
+    private void goToAttract(View v) {
+
+
+        Intent intent = new Intent(getActivity(), VideoConference.class);
+        intent.putExtra("check",1);
+        startActivity(intent);
+    }
 }

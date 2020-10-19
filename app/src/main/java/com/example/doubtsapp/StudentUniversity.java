@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class StudentUniversity extends AppCompatActivity {
 
-    Button aktu;
+    private Button aktu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

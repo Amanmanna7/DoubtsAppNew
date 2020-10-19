@@ -14,6 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".TeacherDashboard"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".viewImageAnswer" />
+        <activity
+            android:name=".postImageAnswer"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".viewTextAnswer" />
+        <activity android:name=".postTextAnswer" />
+        <activity android:name=".selectedQuestionActivity" />
         <activity android:name=".seeRecentActivity" />
         <activity
             android:name=".uploadImages"
@@ -22,7 +32,9 @@
             android:name=".discussionActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".chattingActivity" />
-        <activity android:name=".VideoConference" />
+        <activity
+            android:name=".VideoConference"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".student_dashboard"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
@@ -30,8 +42,6 @@
         <activity android:name=".student_Signup" />
         <activity android:name=".WelcomeScreen" />
         <activity android:name=".TeacherYear" />
-        <activity android:name=".TeacherUniversity" />
-        <activity android:name=".TeacherSubject" />
         <activity android:name=".TeacherLogin" />
         <activity android:name=".StudentYear" />
         <activity android:name=".StudentUniversity" />

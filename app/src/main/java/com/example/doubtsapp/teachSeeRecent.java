@@ -12,13 +12,10 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link connectToFaculty#newInstance} factory method to
+ * Use the {@link teachSeeRecent#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class connectToFaculty extends androidx.fragment.app.Fragment {
-
-    private Button btnJoin;
-    private Button btnChat;
+public class teachSeeRecent extends androidx.fragment.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,8 +25,9 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button seeRecTeach,postImages;
 
-    public connectToFaculty() {
+    public teachSeeRecent() {
         // Required empty public constructor
     }
 
@@ -39,11 +37,11 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment connectToFaculty.
+     * @return A new instance of fragment teachSeeRecent.
      */
     // TODO: Rename and change types and number of parameters
-    public static connectToFaculty newInstance(String param1, String param2) {
-        connectToFaculty fragment = new connectToFaculty();
+    public static teachSeeRecent newInstance(String param1, String param2) {
+        teachSeeRecent fragment = new teachSeeRecent();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,50 +61,41 @@ public class connectToFaculty extends androidx.fragment.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view=inflater.inflate(R.layout.fragment_teach_see_recent, container, false);
+        seeRecTeach=(Button)view.findViewById(R.id.seeRecTeach);
+        postImages=(Button)view.findViewById(R.id.postImages);
 
-        View view = inflater.inflate(R.layout.fragment_connect_to_faculty, container, false);
-        btnJoin = (Button) view.findViewById(R.id.btnConnect);
-        btnChat= (Button) view.findViewById(R.id.btnChat);
-        btnJoin.setOnClickListener(new View.OnClickListener() {
+        seeRecTeach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToAttract(v);
-
+                goToseeRecent();
             }
         });
 
-        btnChat.setOnClickListener(new View.OnClickListener() {
+        postImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToChat(v);
-
+                setImages();
             }
-
-
         });
-
-
-
-
 
 
 
         return view;
     }
 
+    private void setImages() {
 
-
-    private void goToAttract(View v)
-    {
-        Intent intent = new Intent(getActivity(), VideoConference.class);
-        startActivity(intent);
-    }
-
-    private void goToChat(View v) {
-
-        Intent intent= new Intent(getActivity(),chattingActivity.class);
+        Intent intent = new Intent(getContext(),uploadImages.class);
+        intent.putExtra("check",1);
         startActivity(intent);
 
     }
 
+    private void goToseeRecent() {
+        Intent intent= new Intent(getContext(),seeRecentActivity.class);
+        intent.putExtra("check",1);
+        startActivity(intent);
+    }
 }

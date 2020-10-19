@@ -7,25 +7,26 @@
 
     android:orientation="vertical">
 
-<!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:text="@string/hello_blank_fragment" />-->
+    <!--    &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:text="@string/hello_blank_fragment" />-->
 
-<!--</FrameLayout>-->
+    <!--</FrameLayout>-->
 
-    <Button
-        android:id="@+id/btnConnect"
+
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click here to Join" />
+        android:id="@+id/edtCreateChat"
+        android:hint="Chat Room Title"/>
 
     <Button
-        android:id="@+id/btnChat"
+        android:id="@+id/btnCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click here to Chat" />
+        android:text="Create Chat" />
 
 
 

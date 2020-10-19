@@ -80,6 +80,7 @@ public class seeRecentQuestions extends androidx.fragment.app.Fragment {
     private void goToRecentPost(View v) {
 
         Intent intent = new Intent(getContext(),seeRecentActivity.class);
+        intent.putExtra("check",0);
         startActivity(intent);
 
 

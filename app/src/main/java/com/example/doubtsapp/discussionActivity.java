@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.icu.text.Edits;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -51,6 +54,8 @@ public class discussionActivity extends AppCompatActivity {
         SelectedTopics= getIntent().getExtras().get("selected_topic").toString();
         setTitle(SelectedTopics);
 
+        int check =getIntent().getIntExtra("check",-1);
+
         dbr= FirebaseDatabase.getInstance().getReference().child("DiscussionTopics").child(SelectedTopics);
 
         try {
@@ -66,7 +71,16 @@ public class discussionActivity extends AppCompatActivity {
                     DatabaseReference dbr2= dbr.child(user_msg_key);
                     Map<String,Object> map2=new HashMap<>();
                     map2.put("msg",edtMsg.getText().toString());
-                    map2.put("user", UserName);
+
+                    if(check==0){
+                        map2.put("user", UserName);
+                    }
+                    else if(check==1){
+                        map2.put("user", "T-"+UserName);
+                    }
+
+
+
                     dbr2.updateChildren(map2);
 
 
@@ -94,6 +108,28 @@ public class discussionActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.join_video,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.joinVideoItem:
+                Intent intent =new Intent(getApplicationContext(),VideoConference.class);
+                startActivity(intent);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     public void updateConversation(DataSnapshot snapshot) {
 

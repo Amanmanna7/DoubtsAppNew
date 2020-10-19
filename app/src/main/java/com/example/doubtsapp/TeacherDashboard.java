@@ -6,28 +6,23 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class student_dashboard extends AppCompatActivity {
+public class TeacherDashboard extends AppCompatActivity {
 
+    ViewPager viewPagerTeach;
+    TabLayout tabLayoutTeach;
     private FirebaseAuth mAuth;
-    private TextView WelcomeText ;
-    ViewPager viewPager;
-    TabLayout tabLayout;
     private FirebaseDatabase db;
     private String username;
     private String uid;
@@ -35,13 +30,12 @@ public class student_dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_dashboard);
+        setContentView(R.layout.activity_teacher_dashboard2);
+
         mAuth= FirebaseAuth.getInstance();
         uid=mAuth.getUid();
-        DatabaseReference reference=FirebaseDatabase.getInstance().getReference();
-        DatabaseReference StudProfile=reference.child("Students").child(uid);
-
-        db=FirebaseDatabase.getInstance();
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        DatabaseReference StudProfile=reference.child("Teachers").child(uid);
 
         StudProfile.addValueEventListener(new ValueEventListener() {
             @Override
@@ -57,32 +51,25 @@ public class student_dashboard extends AppCompatActivity {
         });
 
 
-        try{
 
-            PagerAdapter pagerAdapter= new PagerAdapter(getSupportFragmentManager());
-            if(pagerAdapter.getCount()==0) {
-
-                pagerAdapter.addFragment(new seeRecentQuestions());
-                pagerAdapter.addFragment(new postDoubts());
-                pagerAdapter.addFragment(new connectToFaculty());
-            }
-            viewPager=findViewById(R.id.viewPager);
-            viewPager.setAdapter(pagerAdapter);
-
-            tabLayout=findViewById(R.id.tab);
-            tabLayout.setupWithViewPager(viewPager);
-            tabLayout.getTabAt(0).setText("See Recent Questions");
-            tabLayout.getTabAt(1).setText("Post Doubts");
-            tabLayout.getTabAt(2).setText("Connect To Faculty");
-
-
+        teachPagerAdapter pagerAdapterTeach=new teachPagerAdapter(getSupportFragmentManager());
+        if(pagerAdapterTeach.getCount()==0){
+            pagerAdapterTeach.addFragment(new teachChatRoom());
+            pagerAdapterTeach.addFragment(new teachSeeRecent());
+            pagerAdapterTeach.addFragment(new connectToStudent());
         }
-        catch (Exception e){
-            Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
-        }
+
+        viewPagerTeach=findViewById(R.id.viewPagerTeach);
+        viewPagerTeach.setAdapter(pagerAdapterTeach);
+        tabLayoutTeach=findViewById(R.id.tabTeach);
+        tabLayoutTeach.setupWithViewPager(viewPagerTeach);
+        tabLayoutTeach.getTabAt(0).setText("Create Chat Room");
+        tabLayoutTeach.getTabAt(1).setText("See Recent Questions");
+        tabLayoutTeach.getTabAt(2).setText("Connect To Students");
+
+        db=FirebaseDatabase.getInstance();
 
     }
-
 
 
     @Override
@@ -100,7 +87,7 @@ public class student_dashboard extends AppCompatActivity {
 
             case R.id.logoutItem:
                 mAuth.signOut();
-                Intent intent=new Intent(student_dashboard.this,WelcomeScreen.class);
+                Intent intent=new Intent(TeacherDashboard.this,WelcomeScreen.class);
                 intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 break;
@@ -113,10 +100,12 @@ public class student_dashboard extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         mAuth.signOut();
-        Intent intent=new Intent(student_dashboard.this,WelcomeScreen.class);
+        Intent intent=new Intent(TeacherDashboard.this,WelcomeScreen.class);
         intent.setFlags(intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+
+
 
 
 
